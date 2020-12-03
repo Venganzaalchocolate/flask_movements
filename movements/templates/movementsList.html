@@ -1,10 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %} lista {% endblock %}
+{% block title %} Romanos {% endblock %}
 
 {% block content%}
-
-        <h1>Lista de movimients</h1>
-        <p> Aqui va mi lista de movimientos </p>
+        <h1>Ingresos Mensuales</h1>
+        <table>
+                <tr>
+                        <th>Fecha</th>
+                        <th>Concepto</th>
+                        <th>Importe</th>
+                </tr>
+        {% for registro in datos %}
+                <tr>
+                        <td>{{registro[0] }}</td>
+                        <td>{{registro[1] }}</td>
+                        <td>{{registro[2] }}</td>
+                </tr>
+        {% endfor %}   
+                <tr>
+                        <td colspan='3'>Total: 2700€</td>
+                </tr>
+        </table>
 
 {% endblock %}
