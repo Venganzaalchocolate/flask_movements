@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %} Romanos {% endblock %}
+
+{% block content%}
+    <h1>{{datos[0][2]}}</h1>
+    <form action="{{datos[0][3]}}" method="POST">
+        <div class="field">
+            <label for="fecha">Fecha:</label>
+            <input type="date" name="fecha" value="{{datos[0][2]}}">
+        </div>
+            <div class="field">
+            <label for="concepto">Concepto:</label>
+            <input type="text" name="concepto" value="{{datos[0][1]}}">
+        </div>
+        <div class="field">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" name="cantidad" step="0.01" value="{{datos[0][0]}}">
+        </div>
+        <div class="field">
+            <input type="submit" value="Guardar">
+        </div>
+    </form>
+{% endblock %}
